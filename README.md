@@ -28,4 +28,10 @@ Una vez vayamos *escrapeando* la información, guardaremos cada *Item* correspon
 
 ---
 
-Para esta función podemos usar dos *scripts*, scraperpy_infocif.py, el cual no oculta nuestra dirección IP o user-agent. Y la versión que utiliza *proxies* rotativos para mejorar el anonimato y los posibles bloqueos por parte del servidor, y además usando la libreria fake-useragent nos proporcionamos de un user-agent aleatorio que mejora dicho anonimato.
+Para esta función podemos usar dos *scripts*, scraperpy_infocif.py, el cual no oculta nuestra dirección IP o user-agent. Y scraperpy_infocif_hidden.py la versión que utiliza *proxies* rotativos para mejorar el anonimato y los posibles bloqueos por parte del servidor, y además usando la libreria *fake-useragent* nos proporcionamos de un user-agent aleatorio que mejora dicho anonimato.
+Para 'parsear' la información usaremos *BeautifulSoup* y para realizar las peticiones HTTP usaremos *urllib* para la versión a cara descubierta y *requests* para la versión con *proxies* rotativos.
+
+## Manejo base de datos
+
+Usaremos una base de datos no relacional **DynamoDB** en **AWS**, para ello usaremos la librería *Boto3* en los *scripts* que manejen la tabla. 
+Para levantar nuestra tabla, antes de nada debemos ejecutar el *script* crea_tabla.py
