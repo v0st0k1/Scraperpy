@@ -210,6 +210,7 @@ def open_url(url):
 
     '''
     try:
+        url = url.replace('Ñ','%F1').replace('Ç','%C7').replace('º','%BA').replace('ª','%AA')
         resp = urllib.request.urlopen(url)
     except urllib.error.HTTPError as err: #Si se manejase con retry habria bucle infinto
         resp = urllib.request.urlopen("http://www.infocif.es/general/empresas-informacion-listado-empresas.asp?Buscar=E-29%20CONSTRUCCIONES%20INTEGRALES")
