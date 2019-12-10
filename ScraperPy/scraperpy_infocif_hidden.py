@@ -224,6 +224,7 @@ def get_html(url, proxy):
     try:
         ua = UserAgent()
         head = {'User-Agent': ua.random}
+        url = url.replace('Ñ','%F1').replace('Ç','%C7').replace('º','%BA').replace('ª','%AA')
         resp = requests.get(url, proxies={"http":proxy, "https":proxy}, headers = head)
     except requests.HTTPError as err: #Error 500 supongo que no se podra salir con decorador retry
         resp = requests.get("http://www.infocif.es/general/empresas-informacion-listado-empresas.asp?Buscar=E-29%20CONSTRUCCIONES%20INTEGRALES")
