@@ -28,7 +28,7 @@ Una vez vayamos *escrapeando* la información, guardaremos cada *Item* correspon
 
 ---
 
-Para esta función podemos usar dos *scripts*, scraperpy_infocif.py, el cual no oculta nuestra dirección IP o user-agent. Y scraperpy_infocif_hidden.py la versión que utiliza *proxies* rotativos para mejorar el anonimato y los posibles bloqueos por parte del servidor, y además usando la libreria *fake-useragent* nos proporcionamos de un user-agent aleatorio que mejora dicho anonimato.
+Para esta función podemos usar dos *scripts*, scraperpy_infocif.py, el cual no oculta nuestra dirección IP o user-agent, a no ser que el servidor fuerce el cierre de la conexion, entonces probaríamos usando un proxy y un user-agent falso. Y scraperpy_infocif_hidden.py la versión que utiliza siempre *proxies* para mejorar el anonimato y los posibles bloqueos por parte del servidor, y además usando la libreria *fake-useragent* nos proporcionamos de un user-agent aleatorio que mejora dicho anonimato.
 Para 'parsear' la información usaremos *BeautifulSoup* y para realizar las peticiones HTTP usaremos *urllib* para la versión a cara descubierta y *requests* para la versión con *proxies* rotativos.
 
 ## Manejo base de datos
