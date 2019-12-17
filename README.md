@@ -35,3 +35,8 @@ Para 'parsear' la información usaremos *BeautifulSoup* y para realizar las peti
 
 Usaremos una base de datos no relacional **DynamoDB** en **AWS**, para ello usaremos la librería *Boto3* en los *scripts* que manejen la tabla. 
 Para levantar nuestra tabla, antes de nada debemos ejecutar el *script* crea_tabla.py
+
+# Useapy
+
+Esta información que hemos obtenido mediante el escrapeo no es del todo veraz, y está sujeta a fallos procedentes de la propia fuente de la información, ya que se ha originado a partir de los medios gratuitos que las páginas de directorios de empresas nos muestran. Usaremos entonces la API de eInforma para obtener la información correcta. Para economizar al máximo las peticiones (1500/mes) que tenemos en nuestro plan usaremos la base de datos que hemos escrapeado filtrándola según nos convenga. Además, guardaremos un registro en archivos de texto de todas las peticiones realizadas para no desperdiciar información útil.
+Los scripts usados para este cometido serán: *crea_tabla_API.py* para levantar la tabla y *apyWorking.py* para realizar las peticiones y guardar los datos.
